@@ -4,7 +4,7 @@ Personal AI-powered daily dashboard for macOS. Describe a widget in plain Englis
 
 Built with Tauri 2, React, Vite, Tailwind, and FastAPI.
 
-![Themes: Deep Ocean, Aurora, Brutalist Terminal, Paper & Ink]
+![Themes: Frutiger Aero, JARVIS, Windows XP, Matrix Terminal, Paper & Ink]
 
 ---
 
@@ -80,8 +80,9 @@ Output: `src-tauri/target/release/bundle/dmg/Fwubbo_0.1.0_aarch64.dmg`
 
 1. Click **Chat** in the sidebar
 2. Describe what you want — e.g. *"Show me the weather in Atlanta"* or *"Track my top 5 stocks with daily change"*
-3. The widget is generated and appears on your dashboard
-4. Right-click any widget to configure settings, refresh, or delete
+3. Alternatively, use Claude Code. It tends to be better for more sophisticated widgets and for debugging.
+4. The widget is generated and appears on your dashboard
+5. Right-click any widget to configure settings, refresh, or delete
 
 If a widget needs an API key (e.g. NewsAPI, FRED), add it via **Settings → API Keys**. Keys are stored in `backend/.env` as `FWUBBO_SECRET_<NAME>` and injected into the widget's fetch script at runtime.
 
