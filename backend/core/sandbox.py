@@ -41,7 +41,7 @@ ALLOWED_STDLIB = frozenset({
     "typing", "abc", "copy", "pprint",
     "zoneinfo", "time", "calendar", "bisect",
     "heapq", "struct", "io", "csv",
-    "xml",
+    "xml", "email", "imaplib",
 })
 
 # Always-allowed third-party imports
