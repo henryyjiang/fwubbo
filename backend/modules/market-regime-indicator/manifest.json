@@ -1,0 +1,106 @@
+{
+  "id": "market-regime-indicator",
+  "name": "Market Regime",
+  "description": "Daily sentiment-weighted quant regime classifier for QQQ: Strong Buy → Strong Sell via technical indicators + Claude news sentiment",
+  "icon": "TrendingUp",
+  "refresh_interval": 86400,
+  "fetch_timeout": 120.0,
+  "requires": [],
+  "permissions": {
+    "network": ["*"]
+  },
+  "settings": [
+    {
+      "key": "newsapi_key",
+      "type": "password",
+      "label": "NewsAPI Key (optional)",
+      "default": "",
+      "description": "newsapi.org free key — improves article coverage; falls back to Yahoo RSS without it"
+    },
+    {
+      "key": "fred_api_key",
+      "type": "password",
+      "label": "FRED API Key (optional)",
+      "default": "",
+      "description": "Free at fred.stlouisfed.org — required for HY Option-Adjusted Spread indicator"
+    },
+    {
+      "key": "w_sentiment_day",
+      "type": "number",
+      "label": "Weight: 1-day news sentiment",
+      "default": 2.5,
+      "description": "Strongest weight — Claude classifier on past-24h financial articles"
+    },
+    {
+      "key": "w_sentiment_week",
+      "type": "number",
+      "label": "Weight: 7-day news sentiment",
+      "default": 2.0,
+      "description": "Claude classifier on past-7d financial articles"
+    },
+    {
+      "key": "w_vix",
+      "type": "number",
+      "label": "Weight: VIX",
+      "default": 1.5,
+      "description": "CBOE Volatility Index — fear gauge"
+    },
+    {
+      "key": "w_hy_oas",
+      "type": "number",
+      "label": "Weight: HY Option-Adjusted Spread",
+      "default": 1.5,
+      "description": "ICE BofA HY OAS via FRED — credit stress indicator (requires FRED key)"
+    },
+    {
+      "key": "w_cross",
+      "type": "number",
+      "label": "Weight: 50/200 SMA cross",
+      "default": 1.5,
+      "description": "Golden cross (+) / death cross (-) signal"
+    },
+    {
+      "key": "w_sma50",
+      "type": "number",
+      "label": "Weight: Price vs 50-day SMA",
+      "default": 1.0,
+      "description": "Short-term trend position"
+    },
+    {
+      "key": "w_sma200",
+      "type": "number",
+      "label": "Weight: Price vs 200-day SMA",
+      "default": 1.0,
+      "description": "Long-term trend position"
+    },
+    {
+      "key": "w_rsi",
+      "type": "number",
+      "label": "Weight: RSI (14)",
+      "default": 1.0,
+      "description": "Relative Strength Index — overbought / oversold"
+    },
+    {
+      "key": "w_macd",
+      "type": "number",
+      "label": "Weight: MACD",
+      "default": 0.5,
+      "description": "Low weight — momentum confirmation only"
+    }
+  ],
+  "api_stats": {
+    "calls_per_refresh": 6,
+    "llm_tokens_per_refresh": 2000
+  },
+  "widget": {
+    "min_w": 2,
+    "min_h": 3,
+    "default_w": 3,
+    "default_h": 4,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "none"
+  }
+}

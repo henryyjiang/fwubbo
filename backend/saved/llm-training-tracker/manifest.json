@@ -1,0 +1,78 @@
+{
+  "id": "llm-training-tracker",
+  "name": "LLM Training Tracker",
+  "description": "Live Prometheus metrics and log tail for active LLM training runs — demo mode with dummy data when unconfigured",
+  "icon": "Activity",
+  "refresh_interval": 10,
+  "fetch_timeout": 20.0,
+  "requires": [],
+  "permissions": {
+    "network": ["*"]
+  },
+  "settings": [
+    {
+      "key": "prometheus_url",
+      "type": "text",
+      "label": "Prometheus URL",
+      "default": "",
+      "description": "e.g. http://localhost:9090 — leave blank for demo mode with dummy data"
+    },
+    {
+      "key": "loki_url",
+      "type": "text",
+      "label": "Loki URL (optional)",
+      "default": "",
+      "description": "e.g. http://localhost:3100 — if set, fetches real log lines from Loki"
+    },
+    {
+      "key": "job_label",
+      "type": "text",
+      "label": "Prometheus Job Label",
+      "default": "llm_training",
+      "description": "The job= label selector on your training metrics"
+    },
+    {
+      "key": "loss_metric",
+      "type": "text",
+      "label": "Loss Metric Name",
+      "default": "training_loss",
+      "description": "Prometheus metric name for training loss"
+    },
+    {
+      "key": "max_log_lines",
+      "type": "number",
+      "label": "Log Buffer Size",
+      "default": 100,
+      "description": "Max number of log lines to retain in terminal view"
+    },
+    {
+      "key": "history_minutes",
+      "type": "number",
+      "label": "Chart History (minutes)",
+      "default": 60,
+      "description": "How far back the loss chart shows data"
+    },
+    {
+      "key": "idle_threshold_seconds",
+      "type": "number",
+      "label": "Idle Threshold (seconds)",
+      "default": 120,
+      "description": "Mark job as idle if no new Prometheus samples for this many seconds"
+    }
+  ],
+  "api_stats": {
+    "calls_per_refresh": 3,
+    "llm_tokens_per_refresh": 0
+  },
+  "widget": {
+    "min_w": 5,
+    "min_h": 5,
+    "default_w": 9,
+    "default_h": 7,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "subtle"
+  }
+}

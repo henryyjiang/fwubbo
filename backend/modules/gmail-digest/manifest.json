@@ -1,0 +1,68 @@
+{
+  "id": "gmail-digest",
+  "name": "Gmail Digest",
+  "description": "AI-powered summary of your important emails, updated hourly",
+  "icon": "Mail",
+  "refresh_interval": 3600,
+  "fetch_timeout": 90,
+  "requires": [],
+  "permissions": {
+    "network": [
+      "imap.gmail.com",
+      "api.anthropic.com"
+    ],
+    "python_imports": [
+      "imaplib",
+      "email"
+    ]
+  },
+  "settings": [
+    {
+      "key": "gmail_address",
+      "type": "text",
+      "label": "Gmail Address",
+      "default": "",
+      "description": "Your Gmail address"
+    },
+    {
+      "key": "gmail_app_password",
+      "type": "password",
+      "label": "App Password",
+      "default": "",
+      "description": "Gmail App Password (not your account password). Generate at myaccount.google.com \u2192 Security \u2192 2-Step Verification \u2192 App passwords"
+    },
+    {
+      "key": "days_back",
+      "type": "number",
+      "label": "Days to look back",
+      "default": 2,
+      "description": "How many days of email to scan"
+    },
+    {
+      "key": "max_emails",
+      "type": "number",
+      "label": "Max emails to scan",
+      "default": 40,
+      "description": "Maximum number of recent emails to read (higher = slower but more thorough)"
+    }
+  ],
+  "api_stats": {
+    "calls_per_refresh": 1,
+    "llm_tokens_per_refresh": 2000
+  },
+  "notifications": {
+    "supported": true,
+    "default_enabled": true
+  },
+  "widget": {
+    "min_w": 3,
+    "min_h": 3,
+    "default_w": 4,
+    "default_h": 5,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "subtle"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "days-remaining",
+  "name": "Days Remaining",
+  "description": "Shows the number of days until a specified date",
+  "icon": "calendar",
+  "refresh_interval": 3600,
+  "requires": [],
+  "permissions": {
+    "network": [],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "mm",
+      "type": "number",
+      "label": "Month (MM)",
+      "default": 12,
+      "description": "Target month (1–12)"
+    },
+    {
+      "key": "dd",
+      "type": "number",
+      "label": "Day (DD)",
+      "default": 25,
+      "description": "Target day (1–31)"
+    },
+    {
+      "key": "yyyy",
+      "type": "number",
+      "label": "Year (YYYY)",
+      "default": 2026,
+      "description": "Target year"
+    }
+  ],
+  "api_stats": {
+    "calls_per_refresh": 0,
+    "llm_tokens_per_refresh": 0
+  },
+  "notifications": {
+    "supported": false,
+    "default_enabled": false
+  },
+  "widget": {
+    "min_w": 2,
+    "min_h": 2,
+    "default_w": 3,
+    "default_h": 3,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "none"
+  }
+}

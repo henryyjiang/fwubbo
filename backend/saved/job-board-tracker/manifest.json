@@ -1,0 +1,47 @@
+{
+  "id": "job-board-tracker",
+  "name": "Job Board Tracker",
+  "description": "Monitors Workday job postings from top tech companies filtered by your keywords",
+  "icon": "Briefcase",
+  "refresh_interval": 3600,
+  "fetch_timeout": 45.0,
+  "requires": [],
+  "permissions": {
+    "network": ["*.myworkdayjobs.com"],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "keywords",
+      "type": "text",
+      "label": "Search Keywords",
+      "default": "software engineer",
+      "description": "Job title / keyword to search (e.g. 'machine learning', 'backend engineer')"
+    },
+    {
+      "key": "companies",
+      "type": "text",
+      "label": "Companies (comma-separated)",
+      "default": "apple,nvidia,salesforce,adobe,snap",
+      "description": "IDs to monitor: apple, nvidia, salesforce, adobe, snap, paypal, qualcomm, intuit, autodesk, zendesk, box, twilio, workday, vmware, ebay"
+    },
+    {
+      "key": "location_filter",
+      "type": "text",
+      "label": "Location Filter",
+      "default": "",
+      "description": "Only show jobs matching this location string (e.g. 'Remote', 'San Francisco'). Leave blank for all."
+    },
+    {
+      "key": "max_per_company",
+      "type": "number",
+      "label": "Results Per Company",
+      "default": 8,
+      "description": "Max job results to fetch per company (1–20)"
+    }
+  ],
+  "api_stats": { "calls_per_refresh": 5, "llm_tokens_per_refresh": 0 },
+  "notifications": { "supported": true, "default_enabled": false },
+  "widget": { "min_w": 4, "min_h": 3, "default_w": 6, "default_h": 5, "resizable": true },
+  "theme_hints": { "supports_transparency": true, "animation_density": "subtle" }
+}

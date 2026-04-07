@@ -1,0 +1,32 @@
+{
+  "id": "2048-game",
+  "name": "2048",
+  "description": "The 2048 sliding tile puzzle game with unlimited undo and session persistence",
+  "icon": "grid-2x2",
+  "refresh_interval": 86400,
+  "requires": [],
+  "permissions": {
+    "network": [],
+    "python_imports": []
+  },
+  "settings": [],
+  "api_stats": {
+    "calls_per_refresh": 0,
+    "llm_tokens_per_refresh": 0
+  },
+  "notifications": {
+    "supported": false,
+    "default_enabled": false
+  },
+  "widget": {
+    "min_w": 3,
+    "min_h": 4,
+    "default_w": 5,
+    "default_h": 6,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "moderate"
+  }
+}

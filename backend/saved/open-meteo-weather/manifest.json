@@ -1,0 +1,54 @@
+{
+  "id": "open-meteo-weather",
+  "name": "Weather (Open-Meteo)",
+  "description": "Current weather conditions using Open-Meteo API",
+  "icon": "cloud-sun",
+  "refresh_interval": 600,
+  "requires": [],
+  "permissions": {
+    "network": [
+      "geocoding-api.open-meteo.com",
+      "api.open-meteo.com"
+    ],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "location",
+      "type": "text",
+      "label": "Location",
+      "default": "Atlanta",
+      "description": "City name (e.g., 'New York' or 'London, UK')"
+    },
+    {
+      "key": "units",
+      "type": "select",
+      "label": "Temperature Units",
+      "default": "fahrenheit",
+      "options": [
+        "celsius",
+        "fahrenheit"
+      ],
+      "description": "Temperature display units"
+    }
+  ],
+  "api_stats": {
+    "calls_per_refresh": 2,
+    "llm_tokens_per_refresh": 0
+  },
+  "notifications": {
+    "supported": false,
+    "default_enabled": false
+  },
+  "widget": {
+    "min_w": 3,
+    "min_h": 2,
+    "default_w": 4,
+    "default_h": 3,
+    "resizable": true
+  },
+  "theme_hints": {
+    "supports_transparency": true,
+    "animation_density": "subtle"
+  }
+}

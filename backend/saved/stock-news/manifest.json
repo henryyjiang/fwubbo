@@ -1,0 +1,33 @@
+{
+  "id": "stock-news",
+  "name": "Stock News",
+  "description": "Latest headlines for your watchlist tickers via Yahoo Finance",
+  "icon": "TrendingUp",
+  "refresh_interval": 900,
+  "fetch_timeout": 30.0,
+  "requires": [],
+  "permissions": {
+    "network": ["finance.yahoo.com"],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "tickers",
+      "type": "text",
+      "label": "Tickers",
+      "default": "AAPL,NVDA,MSFT,GOOGL,META",
+      "description": "Comma-separated stock tickers to watch"
+    },
+    {
+      "key": "news_per_ticker",
+      "type": "number",
+      "label": "Headlines Per Ticker",
+      "default": 4,
+      "description": "News articles to fetch per ticker (1–10)"
+    }
+  ],
+  "api_stats": { "calls_per_refresh": 5, "llm_tokens_per_refresh": 0 },
+  "notifications": { "supported": false, "default_enabled": false },
+  "widget": { "min_w": 3, "min_h": 2, "default_w": 4, "default_h": 4, "resizable": true },
+  "theme_hints": { "supports_transparency": true, "animation_density": "none" }
+}

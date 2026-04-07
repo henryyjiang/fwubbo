@@ -1,0 +1,47 @@
+{
+  "id": "deadline-tracker",
+  "name": "Deadline Tracker",
+  "description": "Daily AI-powered search for upcoming hackathon, conference, fellowship, and program deadlines matching your interests",
+  "icon": "Clock",
+  "refresh_interval": 3600,
+  "fetch_timeout": 90.0,
+  "requires": [],
+  "permissions": {
+    "network": [],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "topics",
+      "type": "text",
+      "label": "Search Topics",
+      "default": "software engineering hackathons, computer science conferences, coding competitions, CS research fellowships",
+      "description": "What to search for — be specific about your field and interests"
+    },
+    {
+      "key": "types",
+      "type": "text",
+      "label": "Types to Include",
+      "default": "hackathon,conference,fellowship,competition,program,grant",
+      "description": "Comma-separated event types to look for"
+    },
+    {
+      "key": "max_days_ahead",
+      "type": "number",
+      "label": "Lookahead (days)",
+      "default": 90,
+      "description": "Only show deadlines within this many days from today"
+    },
+    {
+      "key": "refresh_hours",
+      "type": "number",
+      "label": "Re-search Interval (hours)",
+      "default": 24,
+      "description": "How often to run a new AI web search (cached between searches)"
+    }
+  ],
+  "api_stats": { "calls_per_refresh": 0, "llm_tokens_per_refresh": 4000 },
+  "notifications": { "supported": true, "default_enabled": true },
+  "widget": { "min_w": 4, "min_h": 3, "default_w": 5, "default_h": 5, "resizable": true },
+  "theme_hints": { "supports_transparency": true, "animation_density": "subtle" }
+}

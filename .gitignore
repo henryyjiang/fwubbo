@@ -1,0 +1,40 @@
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Root-level venv (if present)
+venv/
+
+# Backend runtime
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Environment / secrets
+.env
+
+# Per-user widget config and cached fetch data — contain API keys, personal paths, etc.
+backend/modules/*/config.json
+backend/modules/*/state.json
+backend/saved/*/config.json
+backend/saved/*/state.json
+
+# User profile and app settings (name, location, etc.)
+backend/data/settings.json
+
+# SQLite DB and WAL files
+backend/data/stats.db
+backend/data/stats.db-shm
+backend/data/stats.db-wal
+
+# Claude Code local config (contains shell command history)
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tauri build output
+src-tauri/target/

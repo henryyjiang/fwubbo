@@ -1,0 +1,40 @@
+{
+  "id": "daily-briefing",
+  "name": "Daily Briefing",
+  "description": "AI-generated daily summary from your Obsidian vault and Apple Calendar, refreshed every 2 hours",
+  "icon": "BookOpen",
+  "refresh_interval": 7200,
+  "fetch_timeout": 90.0,
+  "requires": [],
+  "permissions": {
+    "network": ["localhost"],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "vault_path",
+      "type": "text",
+      "label": "Obsidian Vault Path",
+      "default": "",
+      "description": "Path to your Obsidian vault (e.g. ~/Documents/Obsidian/MyVault)"
+    },
+    {
+      "key": "calendar_days",
+      "type": "number",
+      "label": "Calendar Look-ahead (days)",
+      "default": 3,
+      "description": "How many days ahead to pull from Apple Calendar"
+    },
+    {
+      "key": "notes_days",
+      "type": "number",
+      "label": "Notes Look-back (days)",
+      "default": 7,
+      "description": "How many days back to look for recently modified notes"
+    }
+  ],
+  "api_stats": { "calls_per_refresh": 1, "llm_tokens_per_refresh": 1000 },
+  "notifications": { "supported": true, "default_enabled": true },
+  "widget": { "min_w": 3, "min_h": 3, "default_w": 4, "default_h": 5, "resizable": true },
+  "theme_hints": { "supports_transparency": true, "animation_density": "subtle" }
+}

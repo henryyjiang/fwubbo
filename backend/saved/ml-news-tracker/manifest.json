@@ -1,0 +1,47 @@
+{
+  "id": "ml-news-tracker",
+  "name": "ML & News Feed",
+  "description": "Trending ML/AI papers, tech news, and topics personalized to your interests via AI-powered web search",
+  "icon": "Newspaper",
+  "refresh_interval": 3600,
+  "fetch_timeout": 90.0,
+  "requires": [],
+  "permissions": {
+    "network": [],
+    "python_imports": []
+  },
+  "settings": [
+    {
+      "key": "extra_interests",
+      "type": "text",
+      "label": "Extra Interests",
+      "default": "",
+      "description": "Additional interests beyond your Fwubbo profile (comma-separated, e.g. 'diffusion models, robotics, startups')"
+    },
+    {
+      "key": "source_types",
+      "type": "text",
+      "label": "Source Types",
+      "default": "paper,news,blog,tool,discussion",
+      "description": "Types to include: paper, news, blog, tool, discussion (comma-separated)"
+    },
+    {
+      "key": "max_results",
+      "type": "number",
+      "label": "Max Items",
+      "default": 12,
+      "description": "How many items to fetch (3–20)"
+    },
+    {
+      "key": "refresh_hours",
+      "type": "number",
+      "label": "Re-search Interval (hours)",
+      "default": 6,
+      "description": "How often to run a fresh AI web search (cached between searches)"
+    }
+  ],
+  "api_stats": { "calls_per_refresh": 0, "llm_tokens_per_refresh": 5000 },
+  "notifications": { "supported": false, "default_enabled": false },
+  "widget": { "min_w": 4, "min_h": 3, "default_w": 5, "default_h": 6, "resizable": true },
+  "theme_hints": { "supports_transparency": true, "animation_density": "subtle" }
+}
