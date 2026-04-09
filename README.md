@@ -1,5 +1,7 @@
 # Fwubbo
 
+![Image](fwubbo.png)
+
 Personal AI-powered daily dashboard for macOS. Describe a widget in plain English — Claude generates the data fetcher and React component and it appears live on your dashboard.
 
 Built with Tauri 2, React, Vite, Tailwind, and FastAPI.
